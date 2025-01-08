@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+  }
+  
+  .phone-auth-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .input-field {
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+  }
+  
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .input-field:focus {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #28a745;
+  }
+  
+  #recaptcha-container {
+    margin-top: 15px;
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .phone-auth-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .input-field,
+    .btn {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
