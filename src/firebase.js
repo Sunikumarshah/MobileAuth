@@ -4,13 +4,13 @@ import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth
 
 // Your Firebase configuration (replace with your Firebase config details)
 const firebaseConfig = {
-    apiKey: "AIzaSyBSbk9apy7FkZvPKwp-w84JxUTNCl76cKQ",
-    authDomain: "mobileauth-dcf1e.firebaseapp.com",
-    projectId: "mobileauth-dcf1e",
-    storageBucket: "mobileauth-dcf1e.firebasestorage.app",
-    messagingSenderId: "150456967410",
-    appId: "1:150456967410:web:4e93989f58784aa1d1b06b"
-  };
+  apiKey: "AIzaSyDFN0q9hY5DxvDGks9XvQvOLeP8vZWe2yc",
+  authDomain: "mobileotp-e1764.firebaseapp.com",
+  projectId: "mobileotp-e1764",
+  storageBucket: "mobileotp-e1764.firebasestorage.app",
+  messagingSenderId: "320106817832",
+  appId: "1:320106817832:web:215284e8ddd3402425881d"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

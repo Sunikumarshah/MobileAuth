@@ -1,6 +1,6 @@
 // src/components/PhoneAuth.jsx
 import { useState } from "react";
-import { auth, setupRecaptcha, signInWithPhoneNumber } from "./firebase";
+import { auth, setupRecaptcha, signInWithPhoneNumber } from "./firebase"; // import the firebase functions
 import "./PhoneAuth.css";
 
 const PhoneAuth = () => {
@@ -8,20 +8,22 @@ const PhoneAuth = () => {
   const [otp, setOtp] = useState("");
   const [verificationId, setVerificationId] = useState(null);
   const [message, setMessage] = useState("");
-  // const [ph, setPh] = useState("");
-
 
   const handleSendOtp = (e) => {
     e.preventDefault();
-    setupRecaptcha();
+    
+    // Setup reCAPTCHA
+    setupRecaptcha(); 
     let appVerifier = window.recaptchaVerifier;
 
+    // Sign in with phone number using Firebase
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
         setVerificationId(confirmationResult.verificationId);
         setMessage("OTP sent successfully!");
       })
       .catch((error) => {
+        console.error("Error sending OTP:", error);
         setMessage("Error sending OTP: " + error.message);
       });
   };
@@ -49,10 +51,8 @@ const PhoneAuth = () => {
   return (
     <div className="phone-auth-container">
       <h1>Mobile OTP Authentication</h1>
-      <form onSubmit={handleSendOtp} className="auth-form"> 
-          
+      <form onSubmit={handleSendOtp} className="auth-form">
         <input
-        
           type="tel"
           placeholder="Enter phone number"
           value={phoneNumber}
@@ -64,7 +64,7 @@ const PhoneAuth = () => {
         </button>
       </form>
 
-      <div id="recaptcha-container"></div>
+      <div id="recaptcha-container"></div> {/* This is important for reCAPTCHA */}
 
       {verificationId && (
         <form onSubmit={handleVerifyOtp} className="auth-form">
